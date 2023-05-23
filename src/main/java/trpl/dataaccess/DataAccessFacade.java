@@ -261,13 +261,29 @@ public class DataAccessFacade implements DataAccess {
 	}
         
         @Override
+	public List<Chair> searchChairNumber(int id) {
+		List<Chair> chair = new ArrayList<>();
+		for (Chair cr : readReservationChair().values()) {
+			if (cr.getChairNumber() == id)
+				chair.add(cr);
+		}
+		return chair;
+	}
+        
+        @Override
+	public Chair findChair(int chairNumber) {
+            HashMap<Integer, Chair> chair = readReservationChair();
+	    return chair.get(chairNumber);
+	}
+        
+        @Override
 	public void saveReservationChair(Chair chair) {
 		chairs.put(chair.getChairNumber(), chair);
 		ObjectOutputStream out = null;
 		try {
 			Path path = FileSystems.getDefault().getPath(OUTPUT_DIR, Table.CHAIRS.name());
 			out = new ObjectOutputStream(Files.newOutputStream(path));
-			out.writeObject(records);
+			out.writeObject(chairs);
                         System.out.println(path.toAbsolutePath());
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -302,12 +318,31 @@ public class DataAccessFacade implements DataAccess {
 	}
 
         @Override
-        public void cancelReservationChair(Chair chair) {
-                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        }
-
-        @Override
         public List<Chair> readReservationChairList() {
-                throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+            	List<Chair> chair = new ArrayList<>();
+		for (Chair cr : readReservationChair().values()) {
+			chair.add(cr);
+		}
+		return chair;
         }
+        
+        @Override
+	public void saveChair(Chair chair) {
+		chairs.put(chair.getChairNumber(), chair);
+		ObjectOutputStream out = null;
+		try {
+			Path path = FileSystems.getDefault().getPath(OUTPUT_DIR, Table.CHAIRS.name());
+			out = new ObjectOutputStream(Files.newOutputStream(path));
+			out.writeObject(chairs);
+                        System.out.println(path.toAbsolutePath());
+		} catch (IOException e) {
+		} finally {
+			if (out != null) {
+				try {
+					out.close();
+				} catch (IOException e) {
+				}
+			}
+		}
+	}
 }

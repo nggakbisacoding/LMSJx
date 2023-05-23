@@ -16,9 +16,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
-public class Chair extends Stage{
-    	public static Chair INSTANCE = new Chair();
-	public static ChairController controller;
+public class ChairBook extends Stage{
+    	public static ChairBook INSTANCE = new ChairBook();
+	public static ChairBookController controller;
         
 	public void init(Window owner) throws IOException {
 		if (Login.INSTANCE.getOwner() == null)
@@ -31,7 +31,6 @@ public class Chair extends Stage{
 			controller.init();
 			
 		}catch(IOException e) {
-			e.printStackTrace();
 		}
 	}
 }

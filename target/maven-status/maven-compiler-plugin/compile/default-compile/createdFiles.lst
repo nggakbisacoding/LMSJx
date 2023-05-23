@@ -14,15 +14,15 @@ trpl\classes\UserRole.class
 trpl\dataaccess\DataAccess.class
 trpl\lms\NewAuthor.class
 trpl\lms\SecondaryController.class
-trpl\lms\Chair.class
 trpl\classes\Person.class
 trpl\lms\App.class
 trpl\lms\Root.class
+trpl\lms\ChairBook.class
+trpl\lms\ChairBookController.class
 trpl\lms\CheckoutController.class
 trpl\dataaccess\Main.class
 module-info.class
 trpl\lms\Checkout.class
-trpl\lms\ChairController.class
 trpl\classes\BookCopy.class
 trpl\lms\Login.class
 trpl\lms\AddBookCopy.class

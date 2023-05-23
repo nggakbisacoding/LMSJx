@@ -38,8 +38,10 @@ public interface DataAccess {
 	//Checkout of Member
 	public List<CheckoutRecord> searchCheckout(int id);
         
+        public Chair findChair(int chairNumber);
+        public void saveChair(Chair chair);
         public void saveReservationChair(Chair chair);
-        public void cancelReservationChair(Chair chair);
+        public List<Chair> searchChairNumber(int id);
         public List<Chair> readReservationChairList();
         public HashMap<Integer, Chair> readReservationChair();
 }

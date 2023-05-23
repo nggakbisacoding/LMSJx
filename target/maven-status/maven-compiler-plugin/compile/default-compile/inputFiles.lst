@@ -4,12 +4,10 @@ C:\Users\xhien\OneDrive\Dokumen\NetBeansProjects\LMS\lms\src\main\java\trpl\lms\
 C:\Users\xhien\OneDrive\Dokumen\NetBeansProjects\LMS\lms\src\main\java\trpl\classes\Address.java
 C:\Users\xhien\OneDrive\Dokumen\NetBeansProjects\LMS\lms\src\main\java\trpl\dataaccess\DataAccess.java
 C:\Users\xhien\OneDrive\Dokumen\NetBeansProjects\LMS\lms\src\main\java\trpl\lms\AddBookCopyController.java
-C:\Users\xhien\OneDrive\Dokumen\NetBeansProjects\LMS\lms\src\main\java\trpl\lms\ChairController.java
 C:\Users\xhien\OneDrive\Dokumen\NetBeansProjects\LMS\lms\src\main\java\trpl\lms\NewAuthorController.java
 C:\Users\xhien\OneDrive\Dokumen\NetBeansProjects\LMS\lms\src\main\java\trpl\lms\NewMember.java
 C:\Users\xhien\OneDrive\Dokumen\NetBeansProjects\LMS\lms\src\main\java\trpl\classes\CheckoutRecord.java
 C:\Users\xhien\OneDrive\Dokumen\NetBeansProjects\LMS\lms\src\main\java\trpl\classes\Person.java
-C:\Users\xhien\OneDrive\Dokumen\NetBeansProjects\LMS\lms\src\main\java\trpl\lms\Chair.java
 C:\Users\xhien\OneDrive\Dokumen\NetBeansProjects\LMS\lms\src\main\java\trpl\lms\NewMemberController.java
 C:\Users\xhien\OneDrive\Dokumen\NetBeansProjects\LMS\lms\src\main\java\trpl\lms\CheckoutController.java
 C:\Users\xhien\OneDrive\Dokumen\NetBeansProjects\LMS\lms\src\main\java\trpl\lms\SecondaryController.java
@@ -31,6 +29,8 @@ C:\Users\xhien\OneDrive\Dokumen\NetBeansProjects\LMS\lms\src\main\java\trpl\lms\
 C:\Users\xhien\OneDrive\Dokumen\NetBeansProjects\LMS\lms\src\main\java\trpl\lms\App.java
 C:\Users\xhien\OneDrive\Dokumen\NetBeansProjects\LMS\lms\src\main\java\trpl\classes\Member.java
 C:\Users\xhien\OneDrive\Dokumen\NetBeansProjects\LMS\lms\src\main\java\trpl\lms\AddBookCopy.java
+C:\Users\xhien\OneDrive\Dokumen\NetBeansProjects\LMS\lms\src\main\java\trpl\lms\ChairBook.java
+C:\Users\xhien\OneDrive\Dokumen\NetBeansProjects\LMS\lms\src\main\java\trpl\lms\ChairBookController.java
 C:\Users\xhien\OneDrive\Dokumen\NetBeansProjects\LMS\lms\src\main\java\trpl\lms\NewBook.java
 C:\Users\xhien\OneDrive\Dokumen\NetBeansProjects\LMS\lms\src\main\java\module-info.java
 C:\Users\xhien\OneDrive\Dokumen\NetBeansProjects\LMS\lms\src\main\java\trpl\classes\Author.java

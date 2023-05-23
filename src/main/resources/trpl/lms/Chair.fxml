@@ -1,32 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trpl.lms.ChairController">
-    <children>
-      <GridPane prefHeight="300.0" prefWidth="600.0">
-        <columnConstraints>
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="261.0" minWidth="10.0" prefWidth="131.0" />
-            <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="380.0" minWidth="10.0" prefWidth="228.0" />
-            <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" maxWidth="380.0" minWidth="10.0" prefWidth="233.0" />
-        </columnConstraints>
-        <rowConstraints>
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="23.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="64.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="64.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="61.0" minHeight="7.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
-            <RowConstraints maxHeight="39.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-        
-      </GridPane>
-    </children>
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="trpl.lms.ChairBookController">
+   <children>
+      <BorderPane prefHeight="500.0" prefWidth="600.0">
+         <center>
+            <GridPane maxHeight="100.0" prefHeight="150.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="10.0" prefWidth="50.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="350.0" minWidth="10.0" prefWidth="296.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="219.0" minWidth="10.0" prefWidth="204.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="149.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="259.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="259.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Member Id" />
+                  <Label text="Chair Number " GridPane.rowIndex="1" />
+                  <Label fx:id="availability" text="Availability" textFill="#eb0a0a" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="memberId" GridPane.columnIndex="1" />
+                  <TextField fx:id="chairNumber" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#findClicked" text="Find" GridPane.columnIndex="2" />
+                  <Button mnemonicParsing="false" onAction="#searchClicked" text="Search" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Button fx:id="reservationBtn" disable="true" mnemonicParsing="false" onAction="#chairClicked" text="Reservation" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+         </center>
+         <top>
+            <Label text="Reservation Record" BorderPane.alignment="CENTER">
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </top>
+         <bottom>
+            <TableView fx:id="chairRecordTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="chairId" prefWidth="54.0" text="Chair Number" />
+                <TableColumn fx:id="reservationtMember" prefWidth="159.0" text="Member Name" />
+                <TableColumn fx:id="reservationDate" prefWidth="104.0" text="Reservation Date" />
+                <TableColumn fx:id="reservationDueDate" prefWidth="121.0" text="Due Date" />
+              </columns>
+            </TableView>
+         </bottom>
+      </BorderPane>
+   </children>
 </AnchorPane>

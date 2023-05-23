@@ -39,12 +39,12 @@ public class Main {
 		List<Author> authors = new ArrayList<>();
 		authors.add(author1);
                 
-                Chair chair1 = new Chair(1);
-                Chair chair2 = new Chair(2);
-                Chair chair3 = new Chair(3);
-                Chair chair4 = new Chair(4);
-                Chair chair5 = new Chair(5);
-                Chair chair6 = new Chair(6);
+                Chair chair1 = new Chair(1,false,LocalDate.now());
+                Chair chair2 = new Chair(2,false,LocalDate.now());
+                Chair chair3 = new Chair(3,false,LocalDate.now());
+                Chair chair4 = new Chair(4,false,LocalDate.now());
+                Chair chair5 = new Chair(5,false,LocalDate.now());
+                Chair chair6 = new Chair(6,false,LocalDate.now());
 		
 		//Books
 		Book book1 = new Book("Algorithm", "ISBN-111111", authors, 3, 21);
@@ -106,6 +106,9 @@ public class Main {
 		
 		HashMap<String, Book> books = da.readBooks();
 		System.out.println(books);
+                
+                HashMap<Integer, Chair> chairs = da.readReservationChair();
+                System.out.println(chairs);
 		
 		HashMap<Integer, CheckoutRecord> records = da.readCheckoutRecords();
 		System.out.println(records);

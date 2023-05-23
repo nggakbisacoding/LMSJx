@@ -31,6 +31,7 @@ import javafx.stage.Window;
 import trpl.dataaccess.DataAccess;
 import trpl.dataaccess.DataAccessFacade;
 import trpl.classes.*;
+import trpl.classes.Chair;
 
 public class MainPanelController {
 
@@ -102,6 +103,15 @@ public class MainPanelController {
 
 	@FXML
 	private TableColumn checkoutId;
+        
+        @FXML
+        private TableView<Chair> reservationRecordTable;
+
+	@FXML
+	private TableColumn chairId;
+        
+        @FXML
+        private TableColumn isBooked;
 
 	@FXML
 	void fillMemberTable(ActionEvent event) throws IOException {
@@ -112,6 +122,7 @@ public class MainPanelController {
 		populateMembersTable();
 		populateBooksTable();
 		populateCheckoutRecordsTable();
+                populateReservationRecordsTable();
 	}
 
 	public void populateMembersTable() {
@@ -149,6 +160,15 @@ public class MainPanelController {
 		checkoutDueDate.setCellValueFactory(new PropertyValueFactory<CheckoutRecord, String>("dueDate"));
 
 	}
+        
+        public void populateReservationRecordsTable() {
+		DataAccess daf = new DataAccessFacade();
+		List<Chair> reservationRecords = daf.readReservationChairList();
+		reservationRecordTable.getItems().setAll(reservationRecords);
+		chairId.setCellValueFactory(new PropertyValueFactory<Chair, String>("chairNumber"));
+		isBooked.setCellValueFactory(new PropertyValueFactory<Chair, String>("chairBooked"));
+
+	}
 
 	@FXML
 	void openNewMemberWindow(ActionEvent event) throws Exception {
@@ -162,6 +182,7 @@ public class MainPanelController {
 		populateBooksTable();
 		populateMembersTable();
 		populateCheckoutRecordsTable();
+                populateReservationRecordsTable();
 	}
 
 	@FXML
@@ -196,5 +217,11 @@ public class MainPanelController {
 	void newCheckoutClicked(ActionEvent event) throws Exception {
 		Checkout.INSTANCE.init(Root.getRootStage());
 		Checkout.INSTANCE.show();
+	}
+        
+        @FXML
+	void newChairClicked(ActionEvent event) throws Exception {
+		ChairBook.INSTANCE.init(Root.getRootStage());
+		ChairBook.INSTANCE.show();
 	}
 }
