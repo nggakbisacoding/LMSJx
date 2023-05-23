@@ -45,12 +45,12 @@ public class ChairBookController {
 
     @FXML
     private TextField chairNumber;
+    
+    @FXML
+    private TextField chairMember;
 
     @FXML
-    private TableColumn memberId;
-
-    @FXML
-    private TableView<Chair> chairRecordTable;
+    private TableView<Chair> reseravtionRecordTable;
 
     @FXML
     private Button reservationBtn;
@@ -58,18 +58,19 @@ public class ChairBookController {
     @FXML
     void findClicked(ActionEvent event) {
 
-        if (daf.searchChairNumber(Integer.parseInt(memberId.getText())).isEmpty()) {
-            System.out.println(daf.searchChairNumber(Integer.parseInt(memberId.getText())));
+        if (daf.searchChairNumber(Integer.parseInt(chairNumber.getText())).isEmpty()) {
             availability.setText("Not Found!");
             availability.setVisible(true);
         } else {
             List<Chair> reservationRecords = daf.searchChairNumber(Integer.parseInt(chairNumber.getText()));
-            chairRecordTable.getItems().setAll(reservationRecords);
+            reseravtionRecordTable.getItems().setAll(reservationRecords);
             chairId.setCellValueFactory(new PropertyValueFactory<Chair, String>("chairNumber"));
             reservationMember.setCellValueFactory(new PropertyValueFactory<Chair, String>("member"));
             reservationDate.setCellValueFactory(new PropertyValueFactory<Chair, String>("resDate"));
-            reservationDueDate.setCellValueFactory(new PropertyValueFactory<Chair, String>("dueDate"));
+            reservationDueDate.setCellValueFactory(new PropertyValueFactory<ChairBook, String>("dueDate"));
+            reservationMember.setCellValueFactory(new PropertyValueFactory<Chair, String>("member"));
         }
+        chairMember.setDisable(false);
 
     }
 
@@ -83,10 +84,10 @@ public class ChairBookController {
             availability.setVisible(true);
         } else {
             if (!chair.getChairBooked()) {
-                availability.setText("Chair Available)");
+                availability.setText(" Booked Available");
                 availability.setVisible(true);
-                if (memberId.getText().isEmpty()) {
-
+                if (chairMember.getText().isEmpty()) {
+                    
                 } else {
                     reservationBtn.setDisable(false);
                 }
@@ -101,18 +102,13 @@ public class ChairBookController {
 
     @FXML
     private void chairClicked(ActionEvent event) {
-        Member mmbr = daf.findMember(Integer.parseInt(memberId.getText()));
+        Member mmbr = daf.findMember(Integer.parseInt(chairMember.getText()));
         Chair chair = daf.findChair(Integer.parseInt(chairNumber.getText()));
-        System.out.println(mmbr);
-        System.out.println(chair.getChairBooked());
 
         if (!chair.getChairBooked() && mmbr != null) {
-            List<Chair> cr = daf.readReservationChairList();
-            int nextId = cr.size() + 1;
-            chair.setChairBooked(true);
             LocalDate bc = LocalDate.now();
-            System.out.println(bc);
-            Chair ch = new Chair(nextId, mmbr, bc);
+            chair.setEverything(Integer.parseInt(chairNumber.getText()), true, mmbr, bc.plusDays(1), bc.plusDays(2));
+            Chair ch = new Chair(Integer.parseInt(chairNumber.getText()), mmbr, bc);
             daf.saveReservationChair(ch);
             daf.saveChair(chair);
             findClicked(event);

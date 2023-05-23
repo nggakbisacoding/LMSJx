@@ -16,13 +16,13 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 
-public class ChairBook extends Stage{
-    	public static ChairBook INSTANCE = new ChairBook();
-	public static ChairBookController controller;
+public class CancelBook extends Stage{
+    	public static CancelBook INSTANCE = new CancelBook();
+	public static CancelBookController controller;
         
 	public void init(Window owner) throws IOException {
 		try {
-			FXMLLoader  loader = new FXMLLoader(getClass().getResource("ChairBook.fxml"));
+			FXMLLoader  loader = new FXMLLoader(getClass().getResource("CancelBook.fxml"));
 			Scene scene = new Scene(loader.load());
 			controller = loader.getController();
 			setScene(scene);

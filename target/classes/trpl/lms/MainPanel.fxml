@@ -36,7 +36,8 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="Booking">
                   <items>
-                    <MenuItem mnemonicParsing="false" onAction="#newChairClicked"  text="Reservasion" />
+                    <MenuItem mnemonicParsing="false" onAction="#newChairClicked"  text="Booking" />
+                    <MenuItem mnemonicParsing="false" onAction="#cancelReservation"  text="Cancel Reservastion" />
                   </items>
                 </Menu>
               </menus>
@@ -103,6 +104,9 @@
                                 <columns>
                                   <TableColumn fx:id="chairId" prefWidth="130.0" text="Chair Number" />
                                   <TableColumn fx:id="isBooked" prefWidth="130.0" text="Status Booked" />
+                                  <TableColumn fx:id="reservationMember" prefWidth="159.0" text="Member Name" />
+                                  <TableColumn fx:id="reservationDate" prefWidth="104.0" text="Booking Date" />
+                                  <TableColumn fx:id="reservationDueDate" prefWidth="121.0" text="Due Date" />
                                 </columns>
                               </TableView>
                            </children></AnchorPane>

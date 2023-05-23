@@ -3,6 +3,7 @@ trpl\classes\Author.class
 trpl\classes\CheckoutRecord.class
 trpl\dataaccess\Table.class
 trpl\lms\EditMember.class
+trpl\lms\CancelBook.class
 trpl\lms\Validation.class
 trpl\lms\NewAuthorController.class
 trpl\lms\EditBookController.class
@@ -36,5 +37,6 @@ trpl\lms\EditMemberController.class
 trpl\classes\Address.class
 trpl\lms\NewBookController.class
 trpl\classes\Member.class
+trpl\lms\CancelBookController.class
 trpl\lms\PrimaryController.class
 trpl\lms\AddBookCopyController.class

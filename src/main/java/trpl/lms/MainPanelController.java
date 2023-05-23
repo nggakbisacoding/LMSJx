@@ -31,7 +31,6 @@ import javafx.stage.Window;
 import trpl.dataaccess.DataAccess;
 import trpl.dataaccess.DataAccessFacade;
 import trpl.classes.*;
-import trpl.classes.Chair;
 
 public class MainPanelController {
 
@@ -112,6 +111,15 @@ public class MainPanelController {
         
         @FXML
         private TableColumn isBooked;
+        
+        @FXML
+        private TableColumn reservationMember;
+        
+        @FXML
+        private TableColumn reservationDate;
+        
+        @FXML
+        private TableColumn reservationDueDate;
 
 	@FXML
 	void fillMemberTable(ActionEvent event) throws IOException {
@@ -167,6 +175,9 @@ public class MainPanelController {
 		reservationRecordTable.getItems().setAll(reservationRecords);
 		chairId.setCellValueFactory(new PropertyValueFactory<Chair, String>("chairNumber"));
 		isBooked.setCellValueFactory(new PropertyValueFactory<Chair, String>("chairBooked"));
+                reservationMember.setCellValueFactory(new PropertyValueFactory<Chair, String>("member"));
+                reservationDate.setCellValueFactory(new PropertyValueFactory<Chair, String>("resDate"));
+                reservationDueDate.setCellValueFactory(new PropertyValueFactory<Chair, String>("dueDate"));
 
 	}
 
@@ -223,5 +234,11 @@ public class MainPanelController {
 	void newChairClicked(ActionEvent event) throws Exception {
 		ChairBook.INSTANCE.init(Root.getRootStage());
 		ChairBook.INSTANCE.show();
+	}
+        
+        @FXML
+	void cancelReservation(ActionEvent event) throws Exception {
+		CancelBook.INSTANCE.init(Root.getRootStage());
+		CancelBook.INSTANCE.show();
 	}
 }
