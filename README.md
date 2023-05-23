@@ -26,8 +26,8 @@ $ open project from intellij
 ```
 
 ## Usage
-To clean database using text-editor and delete file content in /dataaccess/storage
-To Generate and change data use /dataaccess/main.py
+To clean database using text-editor and delete file content in /dataaccess/storage<br />
+To Generate and change data use /dataaccess/main.py<br />
 To Run Program use /lms/Root.py
 
 ## Sources
