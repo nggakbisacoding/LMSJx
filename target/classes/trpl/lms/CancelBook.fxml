@@ -27,7 +27,7 @@
                         <Label text="Member ID" GridPane.rowIndex="1" />
                         <Label fx:id="availability" text="Availability" textFill="#eb0a0a" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <TextField fx:id="chairNumber" GridPane.columnIndex="1" />
-                        <TextField fx:id="chairMember" GridPane.columnIndex="1" GridPane.rowIndex="1" editable="false"/>
+                        <TextField fx:id="chairMember" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
                         <Button mnemonicParsing="false" onAction="#findClicked" text="Find" GridPane.columnIndex="2" />
                         <Button fx:id="reservationBtn" disable="true" mnemonicParsing="false" onAction="#chairClicked" text="Cancel Booking" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                     </children>
