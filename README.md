@@ -27,8 +27,8 @@ $ open project from intellij
 
 ## Usage
 To clean database using text-editor and delete file content in /dataaccess/storage<br />
-To Generate and change data use /dataaccess/main.py<br />
-To Run Program use /lms/Root.py
+To Generate and change data use /dataaccess/main.java<br />
+To Run Program use /lms/Root.java
 
 ## Sources
 This app is inspired by Kim Jong Un
